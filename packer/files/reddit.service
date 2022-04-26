@@ -1,0 +1,18 @@
+[Unit]
+Description=Reddit Web Server
+After=network.target
+
+[Service]
+Type=notify
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/reddit
+ExecStartPre=/usr/bin/bundle
+ExecStart=/usr/local/bin/puma
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target
