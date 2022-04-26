@@ -1,6 +1,6 @@
 {
 
-"sa_key":"../../key.json",
+"sa_key":"key.json",
 "folder_id":"your_folder_id_here",
 "source_image_family":"ubuntu-1604-lts",
 "instance_mem_gb":"4",
