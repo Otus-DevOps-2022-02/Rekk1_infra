@@ -1,0 +1,35 @@
+{
+"builders":[
+{
+"type": "yandex",
+"service_account_key_file": "{{user `sa_key`}}",
+"folder_id": "{{user `folder_id`}}",
+"source_image_id": "fd808dvhi5levaoeravi",
+
+"image_name": "reddit-full-{{timestamp}}",
+"image_family": "reddit-full",
+"ssh_username": "{{user `ssh_username`}}",
+"platform_id": "standard-v1",
+"use_ipv4_nat": "true",
+"instance_mem_gb":"{{user `instance_mem_gb`}}"
+}
+]
+,
+"provisioners":[
+{"type": "file",
+"source":"./files/reddit.service",
+"destination":"~/"
+},
+{
+"type":"file",
+"source":"./files/reddit",
+"destination":"~/"
+
+}
+,
+{
+"type":"shell",
+"inline":["sudo mv ~/reddit.service /etc/systemd/system/","sudo systemctl enable reddit"]
+}
+]
+}

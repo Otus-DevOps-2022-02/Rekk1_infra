@@ -51,3 +51,8 @@ yc compute instance create \
 
 testapp_IP = 51.250.75.181
 testapp_port = 9292
+
+#packer homework
+
+Выполнены все дз. По дополнительным в  files/ добавлен reddit и reddit.service systemd.
+Выполнены все дз
